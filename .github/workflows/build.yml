@@ -36,7 +36,7 @@ jobs:
             ${{ secrets.DOCKERHUB_REPO }}
           tags: |
             type=raw,value=latest,priority=100
-            type=raw,value=qemuArm
+            type=raw,value=qemuarm
           labels: |
             org.opencontainers.image.title=${{ vars.NAME }}
         env:
@@ -66,8 +66,8 @@ jobs:
           push: true
           provenance: false
           platforms: linux/amd64,linux/arm64
-          tags: qemuArm
-          labels: qemuArm
+          tags: qemuarm
+          labels: qemuarm
           annotations: ${{ steps.meta.outputs.annotations }}
           build-args: |
             VERSION_ARG=${{ steps.meta.outputs.version }}
