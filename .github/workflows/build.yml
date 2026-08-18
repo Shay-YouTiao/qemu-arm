@@ -66,8 +66,8 @@ jobs:
           push: true
           provenance: false
           platforms: linux/amd64,linux/arm64
-          tags: qemuarm
-          labels: qemuarm
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           annotations: ${{ steps.meta.outputs.annotations }}
           build-args: |
             VERSION_ARG=${{ steps.meta.outputs.version }}
