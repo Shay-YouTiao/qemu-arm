@@ -36,7 +36,7 @@ jobs:
             ${{ secrets.DOCKERHUB_REPO }}
           tags: |
             type=raw,value=latest,priority=100
-            type=raw,value=${{ vars.MAJOR }}last
+            type=raw,value=${{ vars.MAJOR }}
           labels: |
             org.opencontainers.image.title=${{ vars.NAME }}
         env:
