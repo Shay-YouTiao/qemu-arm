@@ -72,18 +72,6 @@ jobs:
           build-args: |
             VERSION_ARG=${{ steps.meta.outputs.version }}
       -
-        name: Create a release
-        uses: action-pack/github-release@v2
-        with:
-          tag: "v${{ steps.meta.outputs.version }}"
-          title: "v${{ steps.meta.outputs.version }}"
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-      -
-        name: Increment version variable
-        uses: action-pack/bump@v2
-        with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-      -
         name: Push to Gitlab mirror
         uses: action-pack/gitlab-sync@v3
         with:
